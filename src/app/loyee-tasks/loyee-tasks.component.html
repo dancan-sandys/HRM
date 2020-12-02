@@ -1,1 +1,33 @@
-<p>loyee-tasks works!</p>
+<div class="row">
+    <div class="sidebar col-md-2">
+        <app-loyee-slidebar></app-loyee-slidebar>
+    </div>
+    <div class="col-md-10 content">
+        <app-loyee-navbar></app-loyee-navbar>
+        <div class="card" id="content">
+            <h4><strong>Task Title</strong></h4>
+            <h6><strong>Assigned By:</strong> Dancan Sandys</h6>
+            <h6><strong>Assigned on:</strong> {{date}}</h6>
+            <h6><strong>Status:</strong> Not Started</h6>
+            <div class="details">
+                <h5><strong>Description</strong></h5>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Maxime cupiditate, hic sed eius ab ipsam quod.
+                    Tempore, at soluta beatae molestiae
+                    tempora accusantium vel et nihil pariatur,
+                    delectus neque facilis.
+                </p>
+                <div class="reviews bg-light card">
+                    <h6><strong>Reviews</strong></h6>
+                    <p>No Reviews Yet</p>
+                </div>
+                <div class="actions">
+                    <button value="started" class="btn btn-primary">Start</button>
+                    <button value="finished" class="btn btn-danger">Finish</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

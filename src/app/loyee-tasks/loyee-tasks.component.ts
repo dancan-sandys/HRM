@@ -9,6 +9,8 @@ export class LoyeeTasksComponent implements OnInit {
 
   constructor() { }
 
+  date:any = Date().toString() 
+
   ngOnInit(): void {
   }
 
