@@ -1,0 +1,12 @@
+.topper{
+    height: 12vh;
+}
+.sidebar{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.text-black{
+    color: black;
+}

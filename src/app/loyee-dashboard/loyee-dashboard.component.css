@@ -1,0 +1,67 @@
+body{
+    background-color: whitesmoke;
+}
+.content{
+    background-color: whitesmoke;
+    padding: 0;
+}
+.sidebar{
+    margin-right: 0;
+    border-right: 1px solid darkslategray;
+    background-color: white;
+}
+.navigation{
+    width: 10%;
+}
+
+#content{
+    background-color: white;
+    margin: 2%;
+    padding: 2%;
+    margin-right: 3%;
+    margin-left: 1%;
+
+}
+
+.general-card{
+    font-size: 30px;
+    font-weight: 500;
+    align-items: center;
+    text-align: center;
+    margin: 2%;
+    height: 20vh;
+    
+}
+
+.middle{
+    margin: 2% 8%;
+}
+
+.overview{
+    margin-left:2%;
+    height: 40vh;
+    padding: 1%;
+    font-size: 13px;
+}
+
+.overview h4{
+    font-weight: 900;
+}
+
+.pie-chart{
+    margin: 0;
+    margin-left: 4%;
+    height: 40vh;
+}
+
+.activities{
+    height: 60vh;
+    margin-left:2%;
+    padding: 2%;
+}
+
+.rtasks{
+    overflow-y: scroll;
+    height: 60vh;
+    padding: 2%;   
+}

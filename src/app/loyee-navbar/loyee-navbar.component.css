@@ -1,0 +1,19 @@
+.navbar{
+    margin: 0;
+}
+
+.line{
+    color: black;
+    background-color: black;
+}
+
+.profile-image{
+    height: 8vh;
+    width: 6%;
+    border-radius: 100%;
+    background-image: url('https://images.pexels.com/photos/194446/pexels-photo-194446.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+    background-size: cover;
+    background-position: center center;
+    margin: 0;
+    margin-right: 2%;
+}
