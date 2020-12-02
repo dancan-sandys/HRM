@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "hrmfrontend"
+  "defaultProject": "hrmfrontend",
+  "cli": {
+    "analytics": "cde43c20-59a6-4433-aec9-d4f4f8aa9df1"
+  }
 }
