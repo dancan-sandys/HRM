@@ -9,6 +9,7 @@ import { LoyeeTasksComponent } from './loyee-tasks/loyee-tasks.component';
 import { LoyeeLoginComponent } from './loyee-login/loyee-login.component';
 import { LoyeeNavbarComponent } from './loyee-navbar/loyee-navbar.component';
 import { LoyeeSlidebarComponent } from './loyee-slidebar/loyee-slidebar.component';
+import { LoyerDashboardComponent } from './loyer-dashboard/loyer-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LoyeeSlidebarComponent } from './loyee-slidebar/loyee-slidebar.componen
     LoyeeTasksComponent,
     LoyeeLoginComponent,
     LoyeeNavbarComponent,
-    LoyeeSlidebarComponent
+    LoyeeSlidebarComponent,
+    LoyerDashboardComponent
   ],
   imports: [
     BrowserModule,

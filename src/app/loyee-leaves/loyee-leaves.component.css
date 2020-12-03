@@ -1,0 +1,46 @@
+.sidebar{
+    background-color: white;
+}
+.content{
+    padding: 0;
+}
+
+.col-md-3{
+    font-size: 30px;
+    font-weight: 500;
+    align-items: center;
+    text-align: center;
+    margin: 3%;
+    height: 20vh;
+    padding: 3%;
+}
+
+.first{
+    margin-left: 5%;
+}
+
+.form{
+    padding: 5%;
+    margin: 4%;
+    width: 90%;
+}
+
+.input{
+    width: 100%;
+}
+select{
+    width: 50%;
+}
+label{
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+}
+input{
+    width: 50%;
+    border-radius: 5px;
+}
+
+form{
+    width: 70%;
+}

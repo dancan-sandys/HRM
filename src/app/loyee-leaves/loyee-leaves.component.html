@@ -1,1 +1,55 @@
-<p>loyee-leaves works!</p>
+<div class="row">
+    <div class="sidebar col-md-2">
+        <app-loyee-slidebar></app-loyee-slidebar>
+    </div>
+    <div class="content col-md-10">
+        <app-loyee-navbar></app-loyee-navbar>
+        <div id="content">
+            <div class="row">
+                <div class="card col-md-3 first">
+                    <h4>14 leave days remaining</h4>
+                </div>
+                <div class="card col-md-3 middle">
+                    <h4>15 leaves approved</h4>
+                </div>
+                <div class="card col-md-3">
+                    <h4>12 leaves declined</h4>
+                </div>
+            </div>
+
+            <div class="form card bg-white apply">
+                <form action="">
+                    <div class="input">
+                        <label for="leavetype">
+                            <p> Type:</p>
+                            <select name="leavetype" class="form-control" id="exampleFormControlSelect1">
+
+                                <option>Sick Leave</option>
+                                <option>Maternity Leave</option>
+                                <option>Annual Leave</option>
+                                <option>Others</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="input">
+                        <label for="date">
+                            <p>Start Date:</p>
+                            <input type="date" name="date">
+                        </label>
+                    </div>
+
+                    <div class="input">
+                        <label for="days">
+                            <p>Number of days:</p>
+                            <input type="number" name="days" id="">
+                        </label>
+                    </div>
+                    <button class="btn btn-primary"> Apply</button>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+</div>
