@@ -1,0 +1,40 @@
+.content{
+    padding: 0;
+}
+.sidebar{
+    padding: 0;
+    background-color: white;
+}
+
+.main{
+    margin: 3%;
+    margin-right: 0;
+    padding: 2%;
+    height: 40vh;
+}
+
+.statistics{
+    margin: 1%;
+    margin-top: 3%;
+    height: 40vh;
+}
+.tasks{
+    margin: 2%;
+    margin-right: 0;
+    padding: 2%;
+    overflow: scroll;
+}
+
+.leaves{
+    margin: 2%;
+    margin-right: 0;
+    padding: 2%;
+    overflow: scroll;
+}
+
+.snippets{
+    margin: 4%;
+    height: 30vh;
+    padding: 3%;
+}
+

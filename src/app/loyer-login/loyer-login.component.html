@@ -1,0 +1,16 @@
+<div class="form">
+    <form action="submit" class="login">
+        <h5>Logging in as Admin</h5>
+        <hr>
+        <div class="username input">
+            <input type="text" [(ngModel)]="username" name="username" >
+        </div>
+        <div class="password input">
+            <input type="password" [(ngModel)]="password" name="password" id="password">
+        </div>
+        <button routerLink = '/admin/dashboard' type="submit" (click) = "login()">Login</button>
+        <hr>
+        <H6><a routerLink = '' >Log in as staff instead</a></H6>
+
+    </form>
+</div>

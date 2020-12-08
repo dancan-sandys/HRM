@@ -22,7 +22,7 @@
                     <div class="input">
                         <label for="leavetype">
                             <p> Type:</p>
-                            <select name="leavetype" class="form-control" id="exampleFormControlSelect1">
+                            <select name="leavetype" [(ngModel)] = "leavetype" class="form-control" id="exampleFormControlSelect1">
 
                                 <option>Sick Leave</option>
                                 <option>Maternity Leave</option>
@@ -35,17 +35,17 @@
                     <div class="input">
                         <label for="date">
                             <p>Start Date:</p>
-                            <input type="date" name="date">
+                            <input type="date" [(ngModel)] = "date" name="date">
                         </label>
                     </div>
 
                     <div class="input">
                         <label for="days">
                             <p>Number of days:</p>
-                            <input type="number" name="days" id="">
+                            <input type="number" [(ngModel)] = "days" name="days" id="">
                         </label>
                     </div>
-                    <button class="btn btn-primary"> Apply</button>
+                    <button class="btn btn-primary" (click) = 'applyLeave()'> Apply</button>
                 </form>
             </div>
 

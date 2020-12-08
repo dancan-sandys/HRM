@@ -8,7 +8,7 @@
             <h4><strong>Task Title</strong></h4>
             <h6><strong>Assigned By:</strong> {{requestedTask.assigner}}</h6>
             <h6><strong>Assigned on:</strong> {{requestedTask.start}}</h6>
-            <h6><strong>Status:</strong> {{requestedTask.status}}</h6>
+            <h6><strong>Status:</strong>{{requestedTask.status}}</h6>
             <div class="details">
                 <h5><strong>Description</strong></h5>
                 <p>
@@ -19,8 +19,9 @@
                     <p>No Reviews Yet</p>
                 </div>
                 <div class="actions">
-                    <button value="started" class="btn btn-primary">Start</button>
-                    <button value="finished" class="btn btn-danger">Finish</button>
+                    <h6><strong>Mark as:</strong></h6>
+                    <button (click) = "markTask(0, 'Complete')" value="complete" class="btn btn-primary">Complete</button>
+                    <button (click) = "markTask(0, 'incomplete, needs to be revisited')" value="incomplete" class="btn btn-danger">incomplete</button>
 
                 </div>
 

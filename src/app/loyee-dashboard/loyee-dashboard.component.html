@@ -53,66 +53,19 @@
                                 <th scope="col">Assigner</th>
                                 <th scope="col">Deadline</th>
                                 <th scope="col">Status</th>
-                                <th scope="col">View</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">001</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>Pending</td>
-                                <td>View</td>
+                            <tr *ngFor = "let task of tasks" routerLink = '/staff/tasks' (click) = 'getSingleTask(0)'>
+                                <th scope="row">{{task.number}}</th>
+                                <td>{{task.start | date}}</td>
+                                <td>{{task.assigner}}</td>
+                                <td>{{task.deadline | date}}</td>
+                                <td>{{task.status}}</td>
+                                
                             </tr>
-                            <tr>
-                                <th scope="row">002</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                <td>Pending</td>
-                                <td>View</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">003</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                <td>Pending</td>
-                                <td>View</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">004</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                <td>Pending</td>
-                                <td>View</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">004</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                <td>Pending</td>
-                                <td>View</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">005</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                <td>Pending</td>
-                                <td>View</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">006</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                <td>Pending</td>
-                                <td>View</td>
-                            </tr>
+                           
                         </tbody>
                     </table>
                     

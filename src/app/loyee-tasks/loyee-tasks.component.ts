@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TasksService } from '../services/tasks.service';
 
 @Component({
   selector: 'app-loyee-tasks',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoyeeTasksComponent implements OnInit {
 
-  constructor() { }
+  constructor(private task:TasksService) { }
+
+  requestedTask:any = this.task.requestedtask;
+  
 
   date:any = Date().toString() 
 

@@ -1,1 +1,100 @@
-<p>loyer-dashboard works!</p>
+<div class="row">
+    <app-loyee-slidebar class="sidebar col-md-2"></app-loyee-slidebar>
+    <div class="content col-md-10"> 
+        <app-loyee-navbar></app-loyee-navbar>
+        <div id="content">
+            <div class="row">
+                <div class="card main col-md-4">
+                    <h2> <strong>1,000,000</strong></h2>
+                    <p>Current Monthly salary</p>
+                    <h2>29</h2>
+                    <p>Total NUmber of Employees</p>
+                    <h2>50</h2>
+                    <p>Total Completed Tasks</p>
+
+                </div>
+                <div class="card statistics col-md-7">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 card snippets">
+                    <h3>25 Active Employees</h3>
+                </div>
+                <div class="col-md-3 card snippets">
+                    <h3>4 Employees on Leave</h3>
+                </div>
+                <div class="col-md-3 card snippets">
+                    <h3>10 Uncompleted Tasks</h3>
+                </div>
+            </div>
+
+
+            <div class="row employees">
+                <div class="card col-md-5 tasks">
+                    <h4>Employee Tasks</h4>
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Task</th>
+                                <th scope="col">Started</th>
+                                <th scope="col">Deadline</th>
+                                <th scope="col">Status</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr *ngFor='let task of tasks' routerLink = '/admin/taskview' (click) = "getSingleTask(0)">
+                                <th scope="row">{{task.number}}</th>
+                                <td>{{task.start | date}}</td>
+                                <td>{{task.deadline | date}}</td>
+                                <td>{{task.status}}</td>
+               
+
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="card col-md-6 leaves">
+                    <h4>Recent Leave Applications</h4>
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Employee</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Days</th>
+                                <th scope="col">Start</th>
+                                <th scope="col">Status</th>
+                                <th>Approve</th>
+                                <th>Decline</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr *ngFor="let leave of leave">
+                                <th scope="row">{{leave.employeeNumber}}</th>
+                                <td>{{leave.type}}</td>
+                                <td>{{leave.days}}</td>
+                                <td>{{leave.start | date}}</td>
+                                <td>{{leave.status}}</td>
+
+                                <td *ngIf = "leave.status == 'pending'" > <button (click) = "updateLeaveStatus(0, 'Approved')" class="btn btn-success">Approve</button></td>
+                                <td *ngIf = "leave.status == 'pending'" > <button (click) = "updateLeaveStatus(1 ,'Declined')" class="btn btn-danger">Decline</button></td>
+                                <hr>
+                            </tr>
+
+                            <div *ngIf='!leave' class="">
+                                <p>No leave application currently</p>
+                            </div>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Task } from '../classes/task';
+import { TasksService } from '../services/tasks.service';
 
 @Component({
   selector: 'app-loyee-dashboard',
@@ -7,8 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoyeeDashboardComponent implements OnInit {
 
-  constructor() { }
 
+  tasks: any;
+  requestedTask:any;
+
+
+  getSingleTask(id:any){
+    this.requestedTask = this.tasksservice.singleTask(id)
+    console.log(id)
+  }
+  constructor(private tasksservice: TasksService,) {
+    this.tasks = this.tasksservice.tasks
+  }
+
+  
   ngOnInit(): void {
   }
 

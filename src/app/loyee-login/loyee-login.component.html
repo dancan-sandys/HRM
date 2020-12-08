@@ -1,13 +1,15 @@
 <div class="form">
     <form action="submit" class="login">
+        <h5>Logging in as a Staff</h5>
+        <hr>
         <div class="username input">
-            <input type="text" name="username" placeholder="username">
+            <input type="text" [(ngModel)]="username" name="username" placeholder="username">
         </div>
         <div class="password input">
-            <input type="password" name="password" placeholder="password" id="password">
+            <input type="password" name="password" [(ngModel)]="password" placeholder="password" id="password">
         </div>
-
-        <button type="submit">Login</button>
-
+        <button routerLink='/staff/dashboard' type="submit" (click) = "login()">Login</button>
+        <hr>
+        <h6><a routerLink='/admin/login'>Log in as admin instead</a></h6>
     </form>
 </div>

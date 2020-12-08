@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100vh;
 }
 .login{
     padding-top: 15%;
@@ -22,6 +23,7 @@ button{
     text-align: center;
     border-radius: 16px;
 }
+
 form{
     height: 100vh;
 }

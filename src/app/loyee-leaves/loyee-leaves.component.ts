@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LeaveService } from '../services/leave.service';
 
 @Component({
   selector: 'app-loyee-leaves',
@@ -7,7 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoyeeLeavesComponent implements OnInit {
 
-  constructor() { }
+  leavetype: any;
+  date: any;
+  days: any;
+  leave: any;
+  applyLeave() {
+    console.log('Yes')
+    this.leave = this.leaveService.newLeave(this.leavetype, this.date, this.days);
+    
+   
+  
+  }
+  
+  constructor(private leaveService: LeaveService) {
+  }
 
   ngOnInit(): void {
   }
