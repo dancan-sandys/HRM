@@ -3,22 +3,24 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoyeeDashboardComponent } from './loyee-dashboard/loyee-dashboard.component';
-import { LoyeeLeavesComponent } from './loyee-leaves/loyee-leaves.component';
-import { LoyeeTasksComponent } from './loyee-tasks/loyee-tasks.component';
-import { LoyeeLoginComponent } from './loyee-login/loyee-login.component';
-import { LoyeeNavbarComponent } from './loyee-navbar/loyee-navbar.component';
-import { LoyeeSlidebarComponent } from './loyee-slidebar/loyee-slidebar.component';
-import { LoyerDashboardComponent } from './loyer-dashboard/loyer-dashboard.component';
-import { LoyerSidebarComponent } from './loyer-sidebar/loyer-sidebar.component';
-import { LoyerTasksComponent } from './loyer-tasks/loyer-tasks.component';
-import { LoyerLoginComponent } from './loyer-login/loyer-login.component';
-import { LoyerSignupComponent } from './loyer-signup/loyer-signup.component';
-import { FormsModule } from '@angular/forms';
-import { TasksService } from './services/tasks.service';
-import { LeaveService } from './services/leave.service';
-import { AuthService } from './services/auth.service';
+
 import {HttpClientModule} from '@angular/common/http'
+import { LoyeeLeavesComponent } from './main user functions/loyee-leaves/loyee-leaves.component';
+import { LoyeeDashboardComponent } from './main user functions/loyee-dashboard/loyee-dashboard.component';
+import { LoyeeTasksComponent } from './main user functions/loyee-tasks/loyee-tasks.component';
+import { LoyeeLoginComponent } from './main user functions/loyee-login/loyee-login.component';
+import { LoyeeNavbarComponent } from './main user functions/loyee-navbar/loyee-navbar.component';
+import { LoyeeSlidebarComponent } from './main user functions/loyee-slidebar/loyee-slidebar.component';
+import { LoyerDashboardComponent } from './main user functions/loyer-dashboard/loyer-dashboard.component';
+import { LoyerSidebarComponent } from './main user functions/loyer-sidebar/loyer-sidebar.component';
+import { LoyerTasksComponent } from './main user functions/loyer-dashboard/loyer-tasks/loyer-tasks.component';
+import { LoyerLoginComponent } from './main user functions/loyer-login/loyer-login.component';
+import { LoyerSignupComponent } from './main user functions/loyer-signup/loyer-signup.component';
+import { FormsModule } from '@angular/forms';
+import { LeaveService } from './main user functions/services/leave.service';
+import { TasksService } from './main user functions/services/tasks.service';
+import { AuthService } from './users/services/auth.service';
+import { UserComponent } from './users/user/user.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import {HttpClientModule} from '@angular/common/http'
     LoyerSidebarComponent,
     LoyerTasksComponent,
     LoyerLoginComponent,
-    LoyerSignupComponent
+    LoyerSignupComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,9 @@ export class LoyeeTasksComponent implements OnInit {
 
   requestedTask:any = this.task.requestedtask;
   
+  actOnTask(id:any,status:any){
+    this.task.markTask(id,status)
+  }
 
   date:any = Date().toString() 
 

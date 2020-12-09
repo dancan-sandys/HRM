@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/users/services/auth.service';
 import { Leave } from '../classes/leave';
 import { Task } from '../classes/task';
 import { LeaveService } from '../services/leave.service';
@@ -14,6 +15,8 @@ export class LoyerDashboardComponent implements OnInit {
 
   tasks: any;
   leave:any;
+  user:any;
+
   //function to query one task
   getSingleTask(id:any){
     let task = this.tasksservice.singleTask(id)
@@ -26,11 +29,10 @@ export class LoyerDashboardComponent implements OnInit {
     console.log(status)
   }
 
-  constructor(private tasksservice:TasksService, private leaves: LeaveService) {
+  constructor(private tasksservice:TasksService, private leaves: LeaveService, private auth:AuthService) {
     this.tasks = this.tasksservice.tasks
     this.leave = this.leaves.leaves
-
-
+    this.user  = this.auth.user
   }
 
   ngOnInit(): void {

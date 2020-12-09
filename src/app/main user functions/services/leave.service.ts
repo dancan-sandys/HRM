@@ -37,20 +37,9 @@ export class LeaveService {
 
 
 
-    this.leave = new Leave;
-    this.leave.employeeNumber = '001';
-    this.leave.type = 'Annual';
-    this.leave.start = new Date();
-    this.leave.status = 'pending';
-    this.leave.days = '10'
+    this.leave = new Leave('001', 'Annual', '10', new Date(), 'pending',);
     this.leaves.push(this.leave)
-
-    this.leave = new Leave;
-    this.leave.employeeNumber = '001';
-    this.leave.type = 'Annual';
-    this.leave.start = new Date();
-    this.leave.status = 'pending';
-    this.leave.days = '10'
+    this.leave = new Leave('001', 'Annual', '10', new Date(), 'pending',);
     this.leaves.push(this.leave)
   }
   

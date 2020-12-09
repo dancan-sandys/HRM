@@ -12,14 +12,7 @@ export class TasksService {
 
   
   constructor() { 
-    this.task = new Task;
-    this.task.assigner = 'Dancan';
-    this.task.deadline = new Date();
-    this.task.number = '001';
-    this.task.start = new Date();
-    this.task.description = 'Do It Now';
-    this.task.status = 'pending';
-    
+    this.task = new Task('001', new Date(), 'Dancan',new Date(),'Do It Now','pending');
     this.tasks.push(this.task)
   }
 
