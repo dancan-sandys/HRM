@@ -55,7 +55,7 @@ export class LeaveService {
   }
 
   updateLeaveStatus(id: any, newstatus: any, content:any) {
-    let status = this.api.put(`api/leaves/update-status/${id}/`, content)
+    let status = this.api.put(`api/leaves/update-status/${id}/`, content).subscribe((response) => console.log(response))
     this.leaves[id + 1].status = newstatus
     return (newstatus)
   }
