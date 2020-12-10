@@ -5,9 +5,9 @@ import { LoyeeLeavesComponent } from './main user functions/loyee-leaves/loyee-l
 import { LoyeeLoginComponent } from './main user functions/loyee-login/loyee-login.component';
 import { LoyeeTasksComponent } from './main user functions/loyee-tasks/loyee-tasks.component';
 import { LoyerDashboardComponent } from './main user functions/loyer-dashboard/loyer-dashboard.component';
-import { LoyerTasksComponent } from './main user functions/loyer-dashboard/loyer-tasks/loyer-tasks.component';
 import { LoyerLoginComponent } from './main user functions/loyer-login/loyer-login.component';
 import { LoyerSignupComponent } from './main user functions/loyer-signup/loyer-signup.component';
+import { LoyerTasksComponent } from './main user functions/loyer-tasks/loyer-tasks.component';
 
 
 

@@ -8,24 +8,24 @@ import { AuthService } from '../../users/services/auth.service';
 })
 export class LoyeeLoginComponent implements OnInit {
 
-  
-  
-  username:any = "username";
-  password:any = "password";
-  credentials: any;
 
-  login() {
-    this.credentials = this.user.userInstance(this.username, this.password)
+  loginUserDetails = {
+    username: "",
+    password: ""
   }
-  constructor(private user: AuthService) { 
+
+  //wrong credentials entered
+  wrongCredentials: any = this.auth.wrongCredentials
+
+  //component function to call the login function from the authentication service
+  loginUser() {
+    let login = this.auth.loginUser(this.loginUserDetails)
   }
-  
 
-
+  constructor(private auth: AuthService) {
+  }
 
   ngOnInit(): void {
-    this.user = this.username
-  
   }
 
 }

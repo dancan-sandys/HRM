@@ -46,7 +46,7 @@
                         <tbody>
 
                             <tr *ngFor='let task of tasks' routerLink = '/admin/taskview' (click) = "getSingleTask(0)">
-                                <th scope="row">{{task.number}}</th>
+                                <th scope="row">{{task.id}}</th>
                                 <td>{{task.start | date}}</td>
                                 <td>{{task.deadline | date}}</td>
                                 <td>{{task.status}}</td>
@@ -64,6 +64,7 @@
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
+                                <th scope="col">Leave Id</th>
                                 <th scope="col">Employee</th>
                                 <th scope="col">Type</th>
                                 <th scope="col">Days</th>
@@ -76,14 +77,16 @@
                         <tbody>
 
                             <tr *ngFor="let leave of leave">
-                                <th scope="row">{{leave.employeeNumber}}</th>
+                                <th scope="row">{{leave.id}}</th>
+                                <td>{{leave.employeeNumber}}</td>
                                 <td>{{leave.type}}</td>
                                 <td>{{leave.days}}</td>
                                 <td>{{leave.start | date}}</td>
                                 <td>{{leave.status}}</td>
+                                
 
-                                <td *ngIf = "leave.status == 'pending'" > <button (click) = "updateLeaveStatus(0, 'Approved')" class="btn btn-success">Approve</button></td>
-                                <td *ngIf = "leave.status == 'pending'" > <button (click) = "updateLeaveStatus(1 ,'Declined')" class="btn btn-danger">Decline</button></td>
+                                <td *ngIf = "leave.status == 'Pending'" > <button (click) = "updateLeaveStatus(leave.id, 'Approved')" value="Approved" class="btn btn-success">Approve</button></td>
+                                <td *ngIf = "leave.status == 'Pending'" > <button (click) = "updateLeaveStatus(leave.id ,'Declined')" value="Declined" class="btn btn-danger">Decline</button></td>
                                 <hr>
                             </tr>
 

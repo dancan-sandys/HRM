@@ -8,7 +8,16 @@ const port = process.env.PORT || 3001;
 const app = express();
 
 
-app.use(cors())
+
+
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Orgin,X-Requested-WIdth, Content-Type, Accept");
+    next();
+});
+
+
+
 app.use(express.static(__dirname + '/dist/hrmfrontend'));
 
 app.get('/*', (req, res) => res.sendFile(path.join(__dirname)));

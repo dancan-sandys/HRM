@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { GeturlsService } from 'src/app/backend/geturls.service';
 import { Leave } from '../classes/leave';
 
 
@@ -7,21 +8,24 @@ import { Leave } from '../classes/leave';
   providedIn: 'root'
 })
 export class LeaveService {
+  [x: string]: any;
 
-  leave: Leave;
-  leaves:any = [];
+  leave: Leave | undefined;
+  leaves: any = [];
 
   //new leave variables
-  leaveType:any;
-  startDate:any;
-  numberOfDays:any;
+  leaveType: any;
+  startDate: any;
+  numberOfDays: any;
 
-  url: any = 'http://localhost:8000/api/leaves/all-leaves/';
+  //response variable to hold responses from apis
+  response: any;
 
 
 
-  newLeave(type:any, start: any, days:any){
-    
+
+  newLeave(type: any, start: any, days: any) {
+
     this.leaveType = type;
     this.startDate = start;
     this.numberOfDays = days;
@@ -31,21 +35,29 @@ export class LeaveService {
   }
 
 
-  
+  leavelist() {
+    let list = this.api.get('api/leaves/all-leaves/').subscribe((response) => {
+      this.response = response
+      
+      this.response.forEach((leaveResponse: any) => {
+        this.leave = new Leave(leaveResponse.id, leaveResponse.employee, leaveResponse.type, leaveResponse.type, leaveResponse.startDate, leaveResponse.status)
+        this.leaves.push(this.leave)
+      
+        
+      });
 
-  constructor( private http: HttpClient) {
-
-
-
-    this.leave = new Leave('001', 'Annual', '10', new Date(), 'pending',);
-    this.leaves.push(this.leave)
-    this.leave = new Leave('001', 'Annual', '10', new Date(), 'pending',);
-    this.leaves.push(this.leave)
+    })
   }
-  
-  updateLeaveStatus(id: any, newstatus: any){
-    this.leaves[id].status =  newstatus
-    return(newstatus)
+
+
+  constructor(private api: GeturlsService) {
+    this.leavelist()
+  }
+
+  updateLeaveStatus(id: any, newstatus: any, content:any) {
+    let status = this.api.put(`api/leaves/update-status/${id}/`, content)
+    this.leaves[id + 1].status = newstatus
+    return (newstatus)
   }
 
 }

@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 
 
 @Injectable({
@@ -13,22 +14,26 @@ export class GeturlsService {
 
   }
 
-  
+  httpHeaders:HttpHeaders =new HttpHeaders({'Content-Type':'application/json'})
 
-  get(uri:any) {
-    this.http.get(`http://localhost:8000/${uri}`)
+  get(uri: any) {
+    return this.http.get(`http://localhost:8000/${uri}`,
+    {headers: this.httpHeaders})
   }
 
-  post(uri: any, content:any) {
-    this.http.post(`http://localhost:8000/${uri}`, content)
+  post(uri: any, content: any) {
+    return this.http.post(`http://localhost:8000/${uri}`, content,
+      { headers: this.httpHeaders })
   }
 
   delete(uri: any, content: any) {
-    this.http.delete(`http://localhost:8000/${uri}`, content)
+    return this.http.post(`http://localhost:8000/${uri}`, content,
+      { headers: this.httpHeaders })
   }
 
   put(uri: any, content: any) {
-    this.http.put(`http://localhost:8000/${uri}`, content)
+    return this.http.put(`http://localhost:8000/${uri}`, content,
+      { headers: this.httpHeaders })
   }
 
 }

@@ -57,8 +57,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor = "let task of tasks" routerLink = '/staff/tasks' (click) = 'getSingleTask(0)'>
-                                <th scope="row">{{task.number}}</th>
+                            <tr *ngFor = "let task of tasks" routerLink = '/staff/tasks' (click) = 'getSingleTask(task.id- 1)'>
+                                <th scope="row">{{task.id}}</th>
                                 <td>{{task.start | date}}</td>
                                 <td>{{task.assigner}}</td>
                                 <td>{{task.deadline | date}}</td>

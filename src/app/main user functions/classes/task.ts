@@ -2,7 +2,7 @@ export class Task {
     
     
     constructor( 
-       public number: any,
+       public id: any,
        public start: Date, 
        public assigner: any,
        public deadline: Date,
