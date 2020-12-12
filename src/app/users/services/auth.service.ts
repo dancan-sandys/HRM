@@ -6,8 +6,9 @@ import { User } from '../classes/user';
   providedIn: 'root'
 })
 export class AuthService {
+  user: any;
 
-  user: User = new User('Dancan', '1,000,000', 'staff', 'Active', 'Top few');
+
 
   getUser() {
 
@@ -21,7 +22,7 @@ export class AuthService {
 
 
   //wrong credentials
-  wrongCredentials:any = false;
+  wrongCredentials: any = false;
 
   //login function to call the api to log in a user from the backend server
   loginUser(credentials: any) {
@@ -30,22 +31,29 @@ export class AuthService {
       (response) => {
         this.token = response
         this.loggedIn = true
-
+        localStorage.setItem('Bearer' , this.token.token)
+        this.user = new User('Dancan', '1,000,000', 'staff', 'Active', 'Top few');
         console.log(this.token)
       },
       //unsuccessful log in
       (error) => {
         this.wrongCredentials = true
         console.log('wrong credentials')
-      } 
-    
+      }
+
     )
   }
 
 
+  //function to get the token from the locak storage
+  getToken() {
+    let token = localStorage.getItem('Bearer')
+    return token
+  }
+
   //loging out
-  logoutUser(token: any){
-    
+  logoutUser(token: any) {
+
   }
 
   constructor(private api: GeturlsService) {
