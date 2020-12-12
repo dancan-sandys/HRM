@@ -11,9 +11,16 @@ export class LoyeeTasksComponent implements OnInit {
   constructor(private task:TasksService) { }
 
   requestedTask:any = this.task.requestedtask;
+
+  // updating the leave status or task status
+  status = {
+    status: ""
+  }
   
   actOnTask(id:any,status:any){
-    this.task.markTask(id,status)
+    this.status.status = status
+    this.task.markTask(id,this.status)
+   
   }
 
   date:any = Date().toString() 

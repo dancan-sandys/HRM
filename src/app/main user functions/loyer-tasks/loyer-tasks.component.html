@@ -20,8 +20,8 @@
                 </div>
                 <div class="actions">
                     <h6><strong>Mark as:</strong></h6>
-                    <button (click) = "markTask(0, 'Complete')" value="complete" class="btn btn-primary">Complete</button>
-                    <button (click) = "markTask(0, 'Incomplete, needs to be revisited.')" value="incomplete" class="btn btn-danger">incomplete</button>
+                    <button (click) = "markTask(requestedTask.id, 'completed')" value="complete" class="btn btn-primary">Complete</button>
+                    <button (click) = "markTask(requestedTask.id, 'Incomplete')" value="incomplete" class="btn btn-danger">incomplete</button>
 
                 </div>
 

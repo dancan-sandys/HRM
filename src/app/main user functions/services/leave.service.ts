@@ -24,13 +24,9 @@ export class LeaveService {
 
 
 
-  newLeave(type: any, start: any, days: any) {
+  newLeave(content: any) {
 
-    this.leaveType = type;
-    this.startDate = start;
-    this.numberOfDays = days;
-
-    console.log(this.leaveType)
+    let leave = this.api.post('api/leaves/apply-leave/', content).subscribe((response) => console.log(response))
 
   }
 
@@ -38,12 +34,12 @@ export class LeaveService {
   leavelist() {
     let list = this.api.get('api/leaves/all-leaves/').subscribe((response) => {
       this.response = response
-      
+
       this.response.forEach((leaveResponse: any) => {
         this.leave = new Leave(leaveResponse.id, leaveResponse.employee, leaveResponse.type, leaveResponse.type, leaveResponse.startDate, leaveResponse.status)
         this.leaves.push(this.leave)
-      
-        
+
+
       });
 
     })
@@ -54,9 +50,16 @@ export class LeaveService {
     this.leavelist()
   }
 
-  updateLeaveStatus(id: any, newstatus: any, content:any) {
+  updateLeaveStatus(id: any, newstatus: any, content: any) {
     let status = this.api.put(`api/leaves/update-status/${id}/`, content).subscribe((response) => console.log(response))
-    this.leaves[id + 1].status = newstatus
+    this.leaves.forEach((currentleave: any) => {
+     
+      if (currentleave.id == id) {
+        console.log(currentleave)
+        currentleave.status = newstatus
+      }
+
+    });
     return (newstatus)
   }
 

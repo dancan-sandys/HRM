@@ -11,11 +11,16 @@ export class LoyerTasksComponent implements OnInit {
 
   constructor(private taskservice: TasksService) { }
 
+  //object to hold the new task status to be sent to the backend api
+  status = {
+    status : ""
+  }
   requestedTask = this.taskservice.requestedtask
 
   markTask(id:any, status:any){
-    this.taskservice.markTask(id,status)
-    console.log(status)
+    this.status.status = status
+    console.log(this.status)
+    this.taskservice.markTask(id, this.status)
   }
 
   date:any = Date().toString()

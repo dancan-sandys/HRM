@@ -1,6 +1,6 @@
 <div class="row">
     <app-loyee-slidebar class="sidebar col-md-2"></app-loyee-slidebar>
-    <div class="content col-md-10"> 
+    <div class="content col-md-10">
         <app-loyee-navbar></app-loyee-navbar>
         <div id="content">
             <div class="row">
@@ -40,17 +40,17 @@
                                 <th scope="col">Started</th>
                                 <th scope="col">Deadline</th>
                                 <th scope="col">Status</th>
-                                
+
                             </tr>
                         </thead>
                         <tbody>
 
-                            <tr *ngFor='let task of tasks' routerLink = '/admin/taskview' (click) = "getSingleTask(0)">
+                            <tr *ngFor='let task of tasks' routerLink='/admin/taskview' (click)="getSingleTask(task.id)">
                                 <th scope="row">{{task.id}}</th>
                                 <td>{{task.start | date}}</td>
                                 <td>{{task.deadline | date}}</td>
                                 <td>{{task.status}}</td>
-               
+
 
                             </tr>
 
@@ -60,7 +60,7 @@
 
                 </div>
                 <div class="card col-md-6 leaves">
-                    <h4>Recent Leave Applications</h4>
+                    <h4>Pending Leave Applications</h4>
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
@@ -74,25 +74,23 @@
                                 <th>Decline</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody *ngFor="let leave of leave">
 
-                            <tr *ngFor="let leave of leave">
+                            <tr *ngIf = "leave.status == 'Pending'">
                                 <th scope="row">{{leave.id}}</th>
                                 <td>{{leave.employeeNumber}}</td>
                                 <td>{{leave.type}}</td>
                                 <td>{{leave.days}}</td>
                                 <td>{{leave.start | date}}</td>
                                 <td>{{leave.status}}</td>
-                                
 
-                                <td *ngIf = "leave.status == 'Pending'" > <button (click) = "updateLeaveStatus(leave.id, 'Approved')" value="Approved" class="btn btn-success">Approve</button></td>
-                                <td *ngIf = "leave.status == 'Pending'" > <button (click) = "updateLeaveStatus(leave.id ,'Denied')" value="Declined" class="btn btn-danger">Decline</button></td>
+
+                                <td> <button (click)="updateLeaveStatus(leave.id, 'Approved')" value="Approved"
+                                        class="btn btn-success">Approve</button></td>
+                                <td> <button (click)="updateLeaveStatus(leave.id ,'Denied')" value="Declined"
+                                        class="btn btn-danger">Decline</button></td>
                                 <hr>
                             </tr>
-
-                            <div *ngIf='!leave' class="">
-                                <p>No leave application currently</p>
-                            </div>
                         </tbody>
                     </table>
 
