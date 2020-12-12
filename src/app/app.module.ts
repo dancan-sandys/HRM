@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
 import { LoyeeLeavesComponent } from './main user functions/loyee-leaves/loyee-leaves.component';
 import { LoyeeDashboardComponent } from './main user functions/loyee-dashboard/loyee-dashboard.component';
 import { LoyeeTasksComponent } from './main user functions/loyee-tasks/loyee-tasks.component';
@@ -21,6 +21,9 @@ import { TasksService } from './main user functions/services/tasks.service';
 import { AuthService } from './users/services/auth.service';
 import { UserComponent } from './users/user/user.component';
 import { LoyerTasksComponent } from './main user functions/loyer-tasks/loyer-tasks.component';
+import { TokenInterceptorService } from './backend/token-interceptor.service';
+
+
 
 @NgModule({
   declarations: [
@@ -48,6 +51,11 @@ import { LoyerTasksComponent } from './main user functions/loyer-tasks/loyer-tas
     TasksService,
     LeaveService,
     AuthService,
+    {
+      provide :HTTP_INTERCEPTORS,
+      useClass : TokenInterceptorService,
+      multi : true
+    }
   ],
   bootstrap: [AppComponent]
 })
