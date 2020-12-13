@@ -1,6 +1,6 @@
 import { Content } from '@angular/compiler/src/render3/r3_ast';
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/users/services/auth.service';
+import { AuthService } from 'src/app/backend/authentication/users/services/auth.service';
 import { Leave } from '../classes/leave';
 import { Task } from '../classes/task';
 import { LeaveService } from '../services/leave.service';

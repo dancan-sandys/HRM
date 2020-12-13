@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../users/services/auth.service';
+import { AuthService } from '../users/services/auth.service';
+
+
 
 @Component({
   selector: 'app-loyer-login',
@@ -13,6 +15,11 @@ export class LoyerLoginComponent implements OnInit {
     username: "",
     password: ""
   }
+
+  condition:any = true;
+
+
+
 
   //wrong credentials entered
   wrongCredentials:any = this.auth.wrongCredentials

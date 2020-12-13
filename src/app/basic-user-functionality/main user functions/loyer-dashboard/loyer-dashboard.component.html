@@ -17,6 +17,7 @@
 
                 </div>
             </div>
+            
             <div class="row">
                 <div class="col-md-3 card snippets">
                     <h3>25 Active Employees</h3>
@@ -45,7 +46,8 @@
                         </thead>
                         <tbody>
 
-                            <tr *ngFor='let task of tasks' routerLink='/admin/taskview' (click)="getSingleTask(task.id)">
+                            <tr *ngFor='let task of tasks' routerLink='/admin/taskview'
+                                (click)="getSingleTask(task.id)">
                                 <th scope="row">{{task.id}}</th>
                                 <td>{{task.start | date}}</td>
                                 <td>{{task.deadline | date}}</td>
@@ -76,7 +78,7 @@
                         </thead>
                         <tbody *ngFor="let leave of leave">
 
-                            <tr *ngIf = "leave.status == 'Pending'">
+                            <tr *ngIf="leave.status == 'Pending'">
                                 <th scope="row">{{leave.id}}</th>
                                 <td>{{leave.employeeNumber}}</td>
                                 <td>{{leave.type}}</td>

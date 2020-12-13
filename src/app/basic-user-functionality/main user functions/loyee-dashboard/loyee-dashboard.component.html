@@ -12,9 +12,10 @@
                     <div class="col-md-4">
                         <h6>Dashboard</h6>
                         <p>Overview of latest month</p>
-
+                        <h4><em>{{user.firstname}} {{user.lastname}}</em></h4>
                         <h4>{{user.salary}}</h4>
                         <p>Current month earnings</p>
+                      
 
                         <h4>{{user.activestatus}}</h4>
                         <p>Current Status</p>
@@ -53,22 +54,22 @@
                                 <th scope="col">Assigner</th>
                                 <th scope="col">Deadline</th>
                                 <th scope="col">Status</th>
-                                
+
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor = "let task of tasks" routerLink = '/staff/tasks' (click) = 'getSingleTask(task.id)'>
+                            <tr *ngFor="let task of tasks" routerLink='/staff/tasks' (click)='getSingleTask(task.id)'>
                                 <th scope="row">{{task.id}}</th>
                                 <td>{{task.start | date}}</td>
                                 <td>{{task.assigner}}</td>
                                 <td>{{task.deadline | date}}</td>
                                 <td>{{task.status}}</td>
-                                
+
                             </tr>
-                           
+
                         </tbody>
                     </table>
-                    
+
                 </div>
 
             </div>

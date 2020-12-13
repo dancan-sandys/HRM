@@ -8,21 +8,25 @@ import { User } from '../classes/user';
 export class AuthService {
   user: any;
 
-
-
-  getUser() {
-
-  }
+  //the current user
+  currentUser: any;
 
   //token variable to hold the token being used
-  token: any;
-
-  //Boolean variable to hold information on whether or not a user is logged in
-  loggedIn: any = false;
-
+  token: any
 
   //wrong credentials
   wrongCredentials: any = false;
+
+  getUser() {
+    this.api.get('api/authentication/home/').subscribe((response) => {
+      this.currentUser = response
+      console.log(this.currentUser)
+      this.user = new User(this.currentUser.username, this.currentUser.first_name, this.currentUser.last_name, this.currentUser.email, this.currentUser.last_login, '1000000', this.currentUser.role, this.currentUser.activeStatus, this.currentUser.ratings);
+    })
+
+  }
+
+
 
   //login function to call the api to log in a user from the backend server
   loginUser(credentials: any) {
@@ -30,9 +34,8 @@ export class AuthService {
       //successful log in
       (response) => {
         this.token = response
-        this.loggedIn = true
-        localStorage.setItem('Bearer' , this.token.token)
-        this.user = new User('Dancan', '1,000,000', 'staff', 'Active', 'Top few');
+        localStorage.setItem('token', this.token.token)
+        this.getUser()
         console.log(this.token)
       },
       //unsuccessful log in
@@ -47,9 +50,16 @@ export class AuthService {
 
   //function to get the token from the locak storage
   getToken() {
-    let token = localStorage.getItem('Bearer')
+    let token = localStorage.getItem('token')
     return token
   }
+
+
+  //function to check if a person  is logged in or on== not
+  loggedIn() {
+    return !!localStorage.getItem('token')
+  }
+
 
   //loging out
   logoutUser(token: any) {
@@ -57,5 +67,8 @@ export class AuthService {
   }
 
   constructor(private api: GeturlsService) {
+    
+    this.getUser()
+
   }
 }

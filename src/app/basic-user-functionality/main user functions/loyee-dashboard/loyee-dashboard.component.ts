@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/users/classes/user';
-import { AuthService } from 'src/app/users/services/auth.service';
+import { User } from 'src/app/backend/authentication/users/classes/user';
+import { AuthService } from 'src/app/backend/authentication/users/services/auth.service';
 import { Task } from '../classes/task';
 import { TasksService } from '../services/tasks.service';
 
