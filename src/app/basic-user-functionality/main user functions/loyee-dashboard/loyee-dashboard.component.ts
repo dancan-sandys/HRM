@@ -16,18 +16,20 @@ export class LoyeeDashboardComponent implements OnInit {
   requestedTask:any;
   user:any;
 
-
-  getSingleTask(id:any){
+  getSingleTask(id: any) {
     this.requestedTask = this.tasksservice.singleTask(id)
     console.log(id)
   }
+
   constructor(private tasksservice: TasksService, private auth :AuthService) {
-    this.tasks = this.tasksservice.tasks
-    this.user = this.auth.user;
+
   }
 
   
   ngOnInit(): void {
+
+    this.tasks = this.tasksservice.tasks
+    this.user = this.auth.user;
   }
 
 }

@@ -27,7 +27,7 @@ export class LoyerLoginComponent implements OnInit {
 
   //component function to call the login function from the authentication service
   loginUser() {
-    let login = this.auth.loginUser(this.loginUserDetails)
+    let login = this.auth.loginManager(this.loginUserDetails)
   }
 
 

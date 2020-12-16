@@ -1,7 +1,6 @@
 <div class="row">
-    <app-loyee-slidebar class="sidebar col-md-2"></app-loyee-slidebar>
+    <app-loyer-sidebar class="sidebar col-md-2"></app-loyer-sidebar>
     <div class="content col-md-10">
-        <app-loyee-navbar></app-loyee-navbar>
         <div id="content">
             <div class="row">
                 <div class="card main col-md-4">
@@ -78,7 +77,7 @@
                         </thead>
                         <tbody *ngFor="let leave of leave">
 
-                            <tr *ngIf="leave.status == 'Pending'">
+                            <tr>
                                 <th scope="row">{{leave.id}}</th>
                                 <td>{{leave.employeeNumber}}</td>
                                 <td>{{leave.type}}</td>

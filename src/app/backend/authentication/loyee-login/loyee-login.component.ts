@@ -21,7 +21,7 @@ export class LoyeeLoginComponent implements OnInit {
 
   //component function to call the login function from the authentication service
   loginUser() {
-    let login = this.auth.loginUser(this.loginUserDetails)
+    let login = this.auth.loginStaff(this.loginUserDetails)
   }
 
   constructor(private auth: AuthService) {

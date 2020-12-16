@@ -9,15 +9,17 @@ import { LeaveService } from '../services/leave.service';
 export class LoyeeLeavesComponent implements OnInit {
 
 
-  two:any;
+  type:any = 2;
+  
   newLeave =
-    {
-      startDate: "2020-12-24T14:51:00Z",
-      days: 2,
-      "employee": 2,
-      "type": "3"
-    }
 
+    {
+      "id": 1,
+      "startDate": new Date(),
+      "days": this.type,
+      "employee": 3,
+      "type": 1
+    }
   applyLeave() {
 
     let leave = this.leaveService.newLeave(this.newLeave);

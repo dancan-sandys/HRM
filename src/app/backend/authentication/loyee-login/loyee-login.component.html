@@ -8,7 +8,7 @@
         <div class="password input">
             <input type="password" name="password" [(ngModel)]="loginUserDetails.password" placeholder="password" id="password">
         </div>
-        <button routerLink='/staff/dashboard' type="submit" (click) = "loginUser()">Login</button>
+        <button type="submit" (click) = "loginUser()">Login</button>
         <hr>
         <h6><a routerLink='/admin/login'>Log in as admin instead</a></h6>
     </form>

@@ -3,7 +3,6 @@
         <app-loyee-slidebar></app-loyee-slidebar>
     </div>
     <div class="content col-md-10">
-        <app-loyee-navbar></app-loyee-navbar>
         <div id="content">
             <div class="row">
                 <div class="card col-md-3 first">
@@ -22,7 +21,7 @@
                     <div class="input">
                         <label for="leavetype">
                             <p> Type:</p>
-                            <select name="leavetype" [(ngModel)] = "newLeave.type" class="form-control" id="exampleFormControlSelect1">
+                            <select name="leavetype" [(ngModel)] = "type" class="form-control" id="exampleFormControlSelect1">
 
                                 <option value= 3 >Sick Leave</option>
                                 <option value= 2>Maternity Leave</option>

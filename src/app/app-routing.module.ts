@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'admin/dashboard', component: LoyerDashboardComponent, canActivate: [AuthGuard] },
   { path: 'admin/signup', component: LoyerSignupComponent, },
   { path: 'admin/taskview', component: LoyerTasksComponent, canActivate: [AuthGuard] },
-  { path: 'staff/dashboard', component: LoyeeDashboardComponent,  },
+  { path: 'staff/dashboard', component: LoyeeDashboardComponent, canActivate: [AuthGuard] },
   { path: 'staff/leaves', component: LoyeeLeavesComponent, canActivate: [AuthGuard] },
   { path: 'staff/tasks', component: LoyeeTasksComponent, canActivate: [AuthGuard] },
 
