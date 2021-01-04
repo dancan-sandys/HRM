@@ -14,31 +14,35 @@ export class TokenInterceptorService implements HttpInterceptor {
   }
 
   // Check if a user is logged in.
-  loggedIn: any = this._authService.loggedIn()
 
-  
+
+
 
   intercept(req: any, next: any) {
-    if (this.loggedIn) {
+    if (this._authService.loggedIn()) {
       console.log('Jesus')
       let authService = this.injector.get(AuthService)
       let tokenizedReq = req.clone({
         setHeaders: {
-          
+
           Authorization: `token ${authService.getToken()}`
         }
       })
       return next.handle(tokenizedReq)
-      
-    } else {
+
+    } 
+    
+    else {
       console.log('No')
       let authService = this.injector.get(AuthService)
       let tokenizedReq = req.clone({
         setHeaders: {
-          Authorization : `bearer xx.yy.zz`
+          Authorization: `bearer xx.yy.zz`
         }
       })
       return next.handle(tokenizedReq)
     }
+
   }
+  
 }

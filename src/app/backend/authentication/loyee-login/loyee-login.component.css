@@ -17,6 +17,18 @@ input{
     margin-bottom: 2%;
 }
 
+input[type="text"], textarea {
+
+  background-color :#a8dadc; 
+
+}
+
+input[type="password"], textarea {
+
+  background-color :#a8dadc; 
+
+}
+
 button{
     align-self: center;
     text-align: center;
@@ -24,4 +36,11 @@ button{
 }
 form{
     height: 100vh;
+}
+
+input{
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 0%;
+    
 }

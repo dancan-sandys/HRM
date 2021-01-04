@@ -9,21 +9,25 @@ import { LeaveService } from '../services/leave.service';
 export class LoyeeLeavesComponent implements OnInit {
 
 
-  type:any = 2;
-  
-  newLeave =
+  type: any = 2;
+  employee: any = 2;
+  days: any = 3;
+  startDate: any = new Date()
 
-    {
-      "id": 1,
-      "startDate": new Date(),
-      "days": this.type,
-      "employee": 3,
-      "type": 1
-    }
+  _newLeave = {
+    startDate: new Date(this.startDate),
+    days: 23,
+    employee: 3,
+    type: 1
+  }
+
   applyLeave() {
+    let leave = this.leaveService.newLeave(this._newLeave);
 
-    let leave = this.leaveService.newLeave(this.newLeave);
-
+    console.log(typeof (this._newLeave.startDate))
+    console.log(typeof (this.employee))
+    console.log(typeof (this.days))
+    console.log(typeof (this.startDate))
   }
 
   constructor(private leaveService: LeaveService) {

@@ -79,7 +79,7 @@ export class AuthService {
 
   //function to check if a person  is logged in or on== not
   loggedIn() {
-    console.log()
+    console.log(!!sessionStorage.getItem('token'))
     return !!sessionStorage.getItem('token')
   }
 

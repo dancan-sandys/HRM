@@ -1,6 +1,6 @@
 <div class="row">
 
-    <div class="sidebar col-md-2">
+    <div class="sidebar">
         <app-loyee-slidebar></app-loyee-slidebar>
     </div>
 
@@ -8,46 +8,43 @@
       
         <div id="content">
             <div class="row">
-                <div class="overview bg-light card col-md-7 row">
-                    <div class="col-md-4">
-                        <h6>Dashboard</h6>
-                        <p>Overview of latest month</p>
-                        <h4><em>{{user.firstname}} {{user.lastname}}</em></h4>
-                        <h4>{{user.salary}}</h4>
-                        <p>Current month earnings</p>
-                      
-
-                        <h4>{{user.activestatus}}</h4>
-                        <p>Current Status</p>
+                <div class="overview pageCard card col-md-5 row">
+                    <div class="">                        
+                        <h3><em>Dancan Sandys</em></h3>
+                        <h3><em>dancan.oruko96@gmail.com</em></h3>
+                        <h3><em>0727564080</em></h3>
+                        <h3><strong><em>Ext: </em></strong><em>40310</em></h3>
+                        <h3><strong><em>Salary: </em></strong><em>100000</em></h3>
+                        <h3>{{user.activestatus}}</h3>
                     </div>
 
                 </div>
 
-                <div class="card bg-light pie-chart col-md-4">
+                <div class="card pageCard pie-chart col-md-6">
                     <h1>Expected Pie Chart</h1>
                 </div>
 
             </div>
             <div class="row general-cards">
-                <div class="card bg-light general-card col-md-3">
+                <div class="card pageCard general-card col-md-3">
                     <p>34 leave days</p>
                 </div>
-                <div class="card bg-light general-card middle col-md-3">
+                <div class="card pageCard general-card middle col-md-3">
                     <p>20 Uncomplete Tasks</p>
                 </div>
-                <div class="card bg-light general-card col-md-3">
+                <div class="card pageCard general-card col-md-3">
                     <p>50 complete Tasks</p>
                 </div>
 
             </div>
             <div class="row">
-                <div class="card bg-light activities col-md-4">
+                <div class="card pageCard activities col-md-4">
                     <h6>Recent Activities</h6>
                 </div>
-                <div class="card bg-light rtasks activities col-md-7">
+                <div class="card pageCard rtasks activities col-md-7">
                     <h6>Recent Tasks</h6>
                     <table class="table">
-                        <thead class="thead-dark">
+                        <thead class="thead">
                             <tr>
                                 <th scope="col">Task</th>
                                 <th scope="col">Start</th>

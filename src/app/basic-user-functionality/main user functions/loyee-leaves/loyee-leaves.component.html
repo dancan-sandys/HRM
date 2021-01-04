@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="sidebar col-md-2">
+    <div class="sidebar">
         <app-loyee-slidebar></app-loyee-slidebar>
     </div>
     <div class="content col-md-10">
@@ -21,12 +21,13 @@
                     <div class="input">
                         <label for="leavetype">
                             <p> Type:</p>
-                            <select name="leavetype" [(ngModel)] = "type" class="form-control" id="exampleFormControlSelect1">
+                            <select name="leavetype" [(ngModel)]="_newLeave.type" class="form-control"
+                                id="exampleFormControlSelect1">
 
-                                <option value= 3 >Sick Leave</option>
-                                <option value= 2>Maternity Leave</option>
-                                <option value= 1>Annual Leave</option>
-                                <option value= 4>Others</option>
+                                <option value=1>Annual Leave</option>
+                                <option value=2>Maternity Leave</option>
+                                <option value=3>Sick Leave</option>
+                                <option value=4>Others</option>
                             </select>
                         </label>
                     </div>
@@ -34,17 +35,17 @@
                     <div class="input">
                         <label for="date">
                             <p>Start Date:</p>
-                            <input type="date" [(ngModel)] = "newLeave.startDate" name="date">
+                            <input type="date" [(ngModel)]="startDate" name="date">
                         </label>
                     </div>
 
                     <div class="input">
                         <label for="days">
                             <p>Number of days:</p>
-                            <input type="number" [(ngModel)] = "newLeave.days" name="days" id="">
+                            <input type="number" [(ngModel)]="_newLeave.days" name="days" id="">
                         </label>
                     </div>
-                    <button class="btn btn-primary" (click) = 'applyLeave()'> Apply</button>
+                    <button class="btn btn-primary" (click)='applyLeave()'> Apply</button>
                 </form>
             </div>
 

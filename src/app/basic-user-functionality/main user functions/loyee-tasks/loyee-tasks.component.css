@@ -1,26 +1,33 @@
-.sidebar{
-    background-color: white;
+.sidebar {
+    width: 10%;
+    padding: 2%;
+    background-color: #1d3557;
 }
-.content{
+.content {
     margin: 0;
     padding: 0;
 }
 
-#content{
+#content {
     margin: 2%;
-    margin-right:3%;
+    margin-right: 3%;
     padding: 2%;
     background-color: white;
 }
 
-.details{
+.details {
     margin: 3%;
 }
-.reviews{
+.reviews {
     padding: 2%;
 }
 
-button{
+button {
     padding: 1% 3%;
     margin: 2%;
 }
+
+.cardFor{
+    box-shadow: 1px 1px 8px  #1d3557;
+}
+

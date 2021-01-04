@@ -1,3 +1,4 @@
+
 <div class="form">
     <form action="submit" class="login">
         <h5>Logging in as a Staff</h5>
@@ -6,9 +7,9 @@
             <input type="text" [(ngModel)]="loginUserDetails.username" name="username" placeholder="username">
         </div>
         <div class="password input">
-            <input type="password" name="password" [(ngModel)]="loginUserDetails.password" placeholder="password" id="password">
+            <input type="password" placeholder="Password" name="password" [(ngModel)]="loginUserDetails.password" placeholder="password" id="password">
         </div>
-        <button type="submit" (click) = "loginUser()">Login</button>
+        <button type="submit" class="btn-success btn button" (click) = "loginUser()">Login</button>
         <hr>
         <h6><a routerLink='/admin/login'>Log in as admin instead</a></h6>
     </form>

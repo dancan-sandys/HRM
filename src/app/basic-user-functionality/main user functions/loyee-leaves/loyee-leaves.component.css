@@ -1,10 +1,14 @@
 .sidebar{
-    background-color: white;
+    background-color:#1d3557;
+    width: 10%;
+    padding: 2%;
 }
 .content{
     padding: 0;
 }
-
+.card{
+    box-shadow: 1px 1px 8px  #1d3557;
+}
 .col-md-3{
     font-size: 30px;
     font-weight: 500;
