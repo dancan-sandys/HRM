@@ -7,6 +7,7 @@ import { BasicUserFunctionalityModule } from './basic-user-functionality/basic-u
 import { LoyerLoginComponent } from './backend/authentication/loyer-login/loyer-login.component';
 import { LoyeeLoginComponent } from './backend/authentication/loyee-login/loyee-login.component';
 import { FormsModule } from '@angular/forms';
+import { RecentActivitiesService } from './recent-activities.service';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
   ],
   providers: [
+    RecentActivitiesService
   ],
   bootstrap: [AppComponent]
 })

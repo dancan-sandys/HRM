@@ -30,6 +30,12 @@ export class LoyeeLeavesComponent implements OnInit {
     console.log(typeof (this.startDate))
   }
 
+
+  display = false
+
+  displaytoggle(){
+    this.display = !this.display
+  }
   constructor(private leaveService: LeaveService) {
   }
 

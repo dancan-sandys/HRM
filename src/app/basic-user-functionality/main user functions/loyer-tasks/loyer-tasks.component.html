@@ -1,9 +1,9 @@
 <div class="row">
-    <div class="sidebar col-md-2">
+    <div class="sidebar">
         <app-loyer-sidebar></app-loyer-sidebar>
     </div>
     <div class="col-md-10 content">
-        <div class="card" id="content">
+        <div class="pagecard card" id="content">
             <h4><strong>Task Title</strong></h4>
             <h6><strong>Assigned By:</strong> {{requestedTask.assigner}}</h6>
             <h6><strong>Assigned on:</strong> {{requestedTask.start}}</h6>
@@ -19,11 +19,31 @@
                 </div>
                 <div class="actions">
                     <h6><strong>Mark as:</strong></h6>
-                    <button (click) = "markTask(requestedTask.id, 'completed')" value="complete" class="btn btn-primary">Complete</button>
-                    <button (click) = "markTask(requestedTask.id, 'Incomplete')" value="incomplete" class="btn btn-danger">incomplete</button>
+                    <button  (click)=displaytoggle() (click) = "markTask(requestedTask.id, 'completed')" value="complete" class="btn btn-primary">Complete</button>
+                    <button  (click)=displaytoggle() (click) = "markTask(requestedTask.id, 'Incomplete')" value="incomplete" class="btn btn-danger">incomplete</button>
 
                 </div>
 
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="display" class="mdl" id="exampleModalCenter" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog innerModal modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"><strong>Pending Review</strong></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Task status successfully changed!
+            </div>
+            <div class="modal-footer">
+                <button (click)=displaytoggle() class="btn btn-success">Okay</button>
             </div>
         </div>
     </div>

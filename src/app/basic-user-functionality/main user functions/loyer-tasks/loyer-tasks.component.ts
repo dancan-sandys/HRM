@@ -17,6 +17,13 @@ export class LoyerTasksComponent implements OnInit {
   }
   requestedTask = this.taskservice.requestedtask
 
+
+  display = false
+
+  displaytoggle() {
+    this.display = !this.display
+  }
+  
   markTask(id:any, status:any){
     this.status.status = status
     console.log(this.status)

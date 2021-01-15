@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/backend/authentication/users/classes/user';
 import { AuthService } from 'src/app/backend/authentication/users/services/auth.service';
+import { RecentActivitiesService } from 'src/app/recent-activities.service';
 import { Task } from '../classes/task';
 import { TasksService } from '../services/tasks.service';
 
@@ -21,10 +22,11 @@ export class LoyeeDashboardComponent implements OnInit {
     console.log(id)
   }
 
-  constructor(private tasksservice: TasksService, private auth :AuthService) {
+  constructor(private tasksservice: TasksService, private auth :AuthService, private activities: RecentActivitiesService) {
 
   }
-
+  
+  recent_activities = this.activities.activities_list
   
   ngOnInit(): void {
 

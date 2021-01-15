@@ -24,6 +24,13 @@ button{
     border-radius: 16px;
 }
 
+input{
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 0%;
+    
+}
+
 form{
     height: 100vh;
 }

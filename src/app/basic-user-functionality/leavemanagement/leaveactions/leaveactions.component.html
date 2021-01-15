@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="sidebar">
+        <app-loyer-sidebar></app-loyer-sidebar>
+    </div>
+
+    <div class="page-card col-md-10 card leaves">
+        <h1 class="text-center">Pending Leave Applications</h1>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Leave Id</th>
+                    <th scope="col">Employee</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Days</th>
+                    <th scope="col">Start</th>
+                    <th scope="col">Status</th>
+                    <th>Approve</th>
+                    <th>Decline</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let leave of leave">
+
+                <tr *ngIf = 'leave.status == "pending"'>
+                    <th scope="row">{{leave.id}}</th>
+                    <td>{{leave.employeeNumber}}</td>
+                    <td>{{leave.type}}</td>
+                    <td>{{leave.days}}</td>
+                    <td>{{leave.start | date}}</td>
+                    <td>{{leave.status}}</td>
+
+
+                    <td> <button (click)="updateLeaveStatus(leave.id, 'Approved')" value="Approved"
+                            class="btn btn-success">Approve</button></td>
+                    <td> <button (click)="updateLeaveStatus(leave.id ,'Denied')" value="Declined"
+                            class="btn btn-danger">Decline</button></td>
+                    <hr>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

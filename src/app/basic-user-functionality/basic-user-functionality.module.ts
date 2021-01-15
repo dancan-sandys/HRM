@@ -22,6 +22,8 @@ import { TokenInterceptorService } from '../backend/authentication/tokenIntercep
 import { AuthGuard } from '../backend/authentication/auth.guard';
 import { AuthService } from '../backend/authentication/users/services/auth.service';
 import { UserComponent } from '../backend/authentication/users/user/user.component';
+import { AssigntasksComponent } from './taskmanagement/assigntasks/assigntasks.component';
+import { LeaveactionsComponent } from './leavemanagement/leaveactions/leaveactions.component';
 
 
 
@@ -38,7 +40,9 @@ import { UserComponent } from '../backend/authentication/users/user/user.compone
     LoyerSidebarComponent,
     LoyerTasksComponent,
     LoyerSignupComponent,
-    UserComponent
+    UserComponent,
+    AssigntasksComponent,
+    LeaveactionsComponent
   ],
   imports: [
     CommonModule,

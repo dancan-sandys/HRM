@@ -3,12 +3,12 @@
         <h5>Logging in as Admin</h5>
         <hr>
         <div class="username input">
-            <input type="text" [(ngModel)]="loginUserDetails.username" name="username" >
+            <input type="text" placeholder="username" [(ngModel)]="loginUserDetails.username" name="username" >
         </div>
         <div class="password input">
-            <input type="password" [(ngModel)]="loginUserDetails.password" name="password" id="password">
+            <input type="password" placeholder="password" [(ngModel)]="loginUserDetails.password" name="password" id="password">
         </div>
-        <button type="submit" (click) = "loginUser()">Login</button>
+        <button class="btn btn-success" type="submit" (click) = "loginUser()">Login</button>
         <hr>
         <H6><a routerLink = '' >Log in as staff instead</a></H6>
 

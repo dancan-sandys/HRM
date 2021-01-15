@@ -1,21 +1,10 @@
 .topper{
     height: 12vh;
 }
-.sidebar{
-    margin: 0;
-    padding: 3%;
-    padding-left: 10%;
-    height: 100vh;
 
-}
-.sidebar div{
-    margin-bottom: 4%;
-}
 
 .text-black{
-    color: black;
+    color: white;
 }
 
-.sidebar{
-    background-color: white;
-}
+

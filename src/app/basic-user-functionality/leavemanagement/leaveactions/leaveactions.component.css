@@ -1,0 +1,22 @@
+.page-card {
+    margin: 3%;
+    padding:2%;
+    background-color: #f1faee;
+    box-shadow: 1px 1px 8px #1d3557;
+}
+
+.sidebar{
+    background-color: #1d3557;
+    width: 10%;
+    padding: 2%;
+    margin-right: 0;
+    border-right: 1px solid darkslategray; 
+}
+
+h1{
+    padding: 2%;
+}
+
+.row{
+    min-height: 100vh;
+}

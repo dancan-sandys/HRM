@@ -16,7 +16,14 @@ export class LoyeeTasksComponent implements OnInit {
   status = {
     status: ""
   }
+
+
   
+  display = false
+
+  displaytoggle(){
+    this.display = !this.display
+  }
   actOnTask(id:any,status:any){
     this.status.status = status
     this.task.markTask(id,this.status)

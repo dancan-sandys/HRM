@@ -1,6 +1,7 @@
 import { Content } from '@angular/compiler/src/render3/r3_ast';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/backend/authentication/users/services/auth.service';
+import { RecentActivitiesService } from 'src/app/recent-activities.service';
 import { Leave } from '../classes/leave';
 import { Task } from '../classes/task';
 import { LeaveService } from '../services/leave.service';
@@ -28,6 +29,7 @@ export class LoyerDashboardComponent implements OnInit {
     status: ""
   }
   
+  recent_activities = this.activities.activities_list
 
   //function to query one task
   getSingleTask(id:any){
@@ -43,7 +45,7 @@ export class LoyerDashboardComponent implements OnInit {
   }
 
   
-  constructor(private tasksservice:TasksService, private leaves: LeaveService, private auth:AuthService) {
+  constructor(private activities: RecentActivitiesService, private tasksservice:TasksService, private leaves: LeaveService, private auth:AuthService) {
     this.tasks = this.tasksservice.tasks
     this.leave = this.leaves.leaves
     this.user  = this.auth.user

@@ -3,6 +3,12 @@
     padding: 2%;
     background-color: #1d3557;
 }
+
+.pagecard {
+    background-color: #f1faee;
+    box-shadow: 1px 1px 8px #1d3557;
+}
+
 .content {
     margin: 0;
     padding: 0;
@@ -31,3 +37,21 @@ button {
     box-shadow: 1px 1px 8px  #1d3557;
 }
 
+.innerModal{
+    position: absolute;
+    top:2vh;
+    width: 50%;
+    left: 30%;
+    height: 10vh;
+}
+
+.mdl{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.8;
+    height: 108vh;
+}

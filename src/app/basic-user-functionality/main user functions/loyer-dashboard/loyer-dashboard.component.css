@@ -1,40 +1,53 @@
-.content{
+.content {
     padding: 0;
-}
-.sidebar{
-    padding: 0;
-    background-color: white;
 }
 
-.main{
+.sidebar {
+    background-color: #1d3557;
+    width: 10%;
+    padding: 2%;
+    margin-right: 0;
+    border-right: 1px solid darkslategray;
+}
+
+.page-card {
+    background-color: #f1faee;
+    box-shadow: 1px 1px 8px #1d3557;
+}
+
+.main {
     margin: 3%;
     margin-right: 0;
     padding: 2%;
     height: 40vh;
 }
 
-.statistics{
+.statistics {
+    padding:2%;
     margin: 1%;
     margin-top: 3%;
     height: 40vh;
+    overflow-y: scroll;
 }
-.tasks{
+.tasks {
+    margin: 2%;
+    margin-right: 0;
+    padding: 2%;
+    overflow: scroll;
+    margin-left: 3%;
+    max-height: 60vh;
+    min-height: 60vh;
+}
+
+.leaves {
     margin: 2%;
     margin-right: 0;
     padding: 2%;
     overflow: scroll;
 }
 
-.leaves{
-    margin: 2%;
-    margin-right: 0;
-    padding: 2%;
-    overflow: scroll;
-}
-
-.snippets{
+.snippets {
     margin: 4%;
     height: 30vh;
     padding: 3%;
 }
-

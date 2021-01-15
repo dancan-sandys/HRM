@@ -1,5 +1,7 @@
+import { Content } from '@angular/compiler/src/render3/r3_ast';
 import { Injectable } from '@angular/core';
 import { GeturlsService } from 'src/app/backend/geturls.service';
+import { RecentActivitiesService } from 'src/app/recent-activities.service';
 import { Task } from '../classes/task';
 
 @Injectable({
@@ -12,7 +14,7 @@ export class TasksService {
   requestedtask: any;
 
 
-  constructor(private api: GeturlsService) {
+  constructor(private api: GeturlsService, private activities: RecentActivitiesService) {
     this.tasklist()
   }
 
@@ -33,6 +35,18 @@ export class TasksService {
 
   markTask(id: any, status: any) {
     console.log(id)
+    
+    const activity = {
+      type: 'Task Status Update',
+      activity: `Task ${id} marked as ${status.status}`
+    }
+
+    this.activities.activities_list.push(activity)
+
+    let recent_activity = this.api.post(`api/recent_activities/new_activity/`, activity).subscribe((response) => {
+      console.log(response)
+    })
+
     this.tasks.forEach((singleOne: any) => {
       if (singleOne.id == id) {
         let newStatus = this.api.put(`api/tasks/update-status/${id}/`, status).subscribe((response) => {
@@ -52,4 +66,13 @@ export class TasksService {
       }
     });
   }
+
+
+  assignTask(newTask:any) {
+    let results = this.api.post(`api/tasks/assign-task/`, newTask).subscribe((response) => {
+      console.log(response)
+    })
+
+  };
+
 }

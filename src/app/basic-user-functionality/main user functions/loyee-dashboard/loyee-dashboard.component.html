@@ -40,6 +40,15 @@
             <div class="row">
                 <div class="card pageCard activities col-md-4">
                     <h6>Recent Activities</h6>
+                    <div class="ractivities" *ngFor='let activity of recent_activities' >
+                        <h5>~{{activity.type}}</h5>
+                        <small>{{activity.time|date}}</small>
+                        <p><small class="container">{{activity.activity}}</small></p>
+                    </div>
+
+
+
+
                 </div>
                 <div class="card pageCard rtasks activities col-md-7">
                     <h6>Recent Tasks</h6>

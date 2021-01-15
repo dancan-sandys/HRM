@@ -1,9 +1,9 @@
 <div class="row">
-    <app-loyer-sidebar class="sidebar col-md-2"></app-loyer-sidebar>
+    <app-loyer-sidebar class="sidebar"></app-loyer-sidebar>
     <div class="content col-md-10">
         <div id="content">
             <div class="row">
-                <div class="card main col-md-4">
+                <div class="page-card card main col-md-4">
                     <h2> <strong>{{user.salary}}</strong></h2>
                     <p>Current Monthly salary</p>
                     <h2>29</h2>
@@ -12,26 +12,35 @@
                     <p>Total Completed Tasks</p>
 
                 </div>
-                <div class="card statistics col-md-7">
-
+                <div class="page-card container card statistics col-md-3">
+                        <h6>Recent Activities</h6>
+                        <hr>
+                        <div class="ractivities" *ngFor='let activity of recent_activities'>
+                            <h5>~{{activity.type}}</h5>
+                            <small>{{activity.time|date}}</small>
+                            <p><small class="container">{{activity.activity}}</small></p>
+                        </div>
+                </div>
+                <div class="card page-card container statistics col-md-4">
+                    <h1>Expected Pie Chart</h1>
                 </div>
             </div>
-            
+
             <div class="row">
-                <div class="col-md-3 card snippets">
+                <div class="col-md-3 page-card card snippets">
                     <h3>25 Active Employees</h3>
                 </div>
-                <div class="col-md-3 card snippets">
+                <div class="col-md-3 page-card card snippets">
                     <h3>4 Employees on Leave</h3>
                 </div>
-                <div class="col-md-3 card snippets">
+                <div class="col-md-3 page-card card snippets">
                     <h3>10 Uncompleted Tasks</h3>
                 </div>
             </div>
 
 
             <div class="row employees">
-                <div class="card col-md-5 tasks">
+                <div class="page-card card col-md-12 tasks">
                     <h4>Employee Tasks</h4>
                     <table class="table">
                         <thead class="thead-dark">
@@ -56,42 +65,6 @@
                             </tr>
 
 
-                        </tbody>
-                    </table>
-
-                </div>
-                <div class="card col-md-6 leaves">
-                    <h4>Pending Leave Applications</h4>
-                    <table class="table">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th scope="col">Leave Id</th>
-                                <th scope="col">Employee</th>
-                                <th scope="col">Type</th>
-                                <th scope="col">Days</th>
-                                <th scope="col">Start</th>
-                                <th scope="col">Status</th>
-                                <th>Approve</th>
-                                <th>Decline</th>
-                            </tr>
-                        </thead>
-                        <tbody *ngFor="let leave of leave">
-
-                            <tr>
-                                <th scope="row">{{leave.id}}</th>
-                                <td>{{leave.employeeNumber}}</td>
-                                <td>{{leave.type}}</td>
-                                <td>{{leave.days}}</td>
-                                <td>{{leave.start | date}}</td>
-                                <td>{{leave.status}}</td>
-
-
-                                <td> <button (click)="updateLeaveStatus(leave.id, 'Approved')" value="Approved"
-                                        class="btn btn-success">Approve</button></td>
-                                <td> <button (click)="updateLeaveStatus(leave.id ,'Denied')" value="Declined"
-                                        class="btn btn-danger">Decline</button></td>
-                                <hr>
-                            </tr>
                         </tbody>
                     </table>
 
